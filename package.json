@@ -1,14 +1,19 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "concurrently \"json-server -w db.json\" \"expo start\"",
+    "tunnel": "ngrok http 3000",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
     "expo": "~36.0.0",
+    "json-server": "^0.16.1",
+    "ngrok": "^3.2.7",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
